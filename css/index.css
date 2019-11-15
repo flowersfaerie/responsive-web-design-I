@@ -70,9 +70,9 @@ body {
 	margin: auto;
 }
 
-/*header {
-	text-align: center;
-}*/
+.minus800 {
+	display: none;
+}
 
 img {
 	width: 100%;
@@ -88,13 +88,17 @@ nav {
 
 nav a {
 	text-decoration: none;
-	color: black;
+	color: darkgray;
 	font-weight: bold;
 }
 
 nav a:hover {
 	color: blueviolet;
 	background: mintcream;
+}
+
+.navline {
+	display: none;
 }
 
 .logo {
@@ -292,31 +296,33 @@ li {
 @media (max-width: 800px) {
 	body {
 		margin: 0 auto;
-/*	Comment out the background color before production */
-		background: lightgreen;
+	}
+	
+/*	Great Idea logo above navigation links */
+	.minus800 {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		padding-bottom: 20px;
 	}
 	
 	nav {
 		display: flex;
-		flex-flow: row wrap-reverse;
+		flex-flow: row wrap;
 		justify-content: space-between;
-		width: 0 auto;
+/*		width: 0 auto;*/
 	}
 
-	/*	Great Idea image*/
-	nav img {
-		display: block;	
-		vertical-align: top;
-
-	}
-	
 	nav a {
-/*
 		display: flex; 
-		flex-flow: row wrap-reverse;
+		flex-flow: row wrap;
 		justify-content: space-between;
 		align-content: space-around;
-*/
+	}
+	
+	/*	Great Idea logo inline with navigation links */
+	.plus800 {
+		display: none;	
 	}
 	
 	.img-content {
@@ -325,5 +331,50 @@ li {
 }
 
 @media (max-width: 500px) {
+	nav {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-content: center;
+		width: 90%;
+		margin: 0 auto;
+	}
 	
+	nav a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-bottom: 1px solid black;
+		margin: 0 auto;
+		width: 100%;
+		padding: 10px 0;
+	}
+	
+	.upper {
+		display: flex;
+		flex-flow: column nowrap;
+	}
+	
+	.top_content {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-content: flex-start;
+		align-items: flex-start;
+		padding-bottom: 15px;
+	}
+	
+	.lower {
+		display: flex;
+		flex-flow: column nowrap;
+	}
+	
+	.bottom_content {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-content: flex-start;
+		align-items: flex-start;
+		padding-bottom: 15px;
+	}
 }
