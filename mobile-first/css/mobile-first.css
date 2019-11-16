@@ -70,23 +70,36 @@ body {
 	margin: auto;
 }
 
-.minus800 {
-	display: none;
+/*	Great Idea logo inline with navigation links */
+.plus800 {
+	display: none;	
 }
 
-img {
-	width: 100%;
+/*	Great Idea logo above navigation links */
+.minus800 {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	padding-bottom: 20px;
 }
 
 nav {
 	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	align-items: center;
-/*	background: 100% azure;*/
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-content: center;
+	width: 90%;
+	margin: 0 auto;
 }
-
+	
 nav a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid black;
+	margin: 0 auto;
+	width: 100%;
+	padding: 10px 0;
 	text-decoration: none;
 	color: darkgray;
 	font-weight: bold;
@@ -96,19 +109,36 @@ nav a:hover {
 	color: blueviolet;
 	background: mintcream;
 }
-
-/*
-.navline {
-	display: none;
+	
+.upper {
+	display: flex;
+	flex-flow: column nowrap;
 }
-*/
-
-.logo {
-	width: auto;
+	
+.top_content {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+	padding-bottom: 15px;
+}
+	
+.lower {
+	display: flex;
+	flex-flow: column nowrap;
+}
+	
+.bottom_content {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+	padding-bottom: 15px;
 }
 
-.services-header-img {
-	margin: 30px 0;
+img {
 	width: 100%;
 }
 
@@ -143,32 +173,9 @@ header h1 {
 	color: mintcream;
 }
 
-.upper {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	align-items: flex-start;
-}
-
-.top_content {
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: space-between;
-	align-items: flex-start;
-	flex-shrink: 1;
-}
-
-.top_content p {
-	width: 95%;
-	margin: 0;
-}
-
-.lower {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	align-content: flex-start;
-}
+.img-content {
+		display: none;
+	}
 
 .lower a {
 	text-decoration: none;
@@ -179,17 +186,9 @@ header h1 {
 	color: indigo;
 }
 
-.bottom_content {
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: space-evenly;
-	align-content: flex-start;
-/*	flex-shrink: 5;*/
-}
-
-.bottom_content p {
-	width: 95%;
-	margin: 0;
+.services-header-img {
+	margin: 30px 0;
+	width: 100%;
 }
 
 h2 {
@@ -221,12 +220,7 @@ address p {
 	margin: 0 0 1em 0;
 }
 
-/* General stylized footer for all pages */
-footer {
-	text-align: center;
-	font-style: italic;
-	margin: 60px 0 0 0;
-}
+
 
 /* CSS for services.html */
 .options {
@@ -293,26 +287,26 @@ li {
 	margin: 0 0 10px 0;
 }
 /* End CSS for services.html*/
+/* General stylized footer for all pages */
+footer {
+	text-align: center;
+	font-style: italic;
+	margin: 60px 0 0 0;
+}
 
-/* Media query for index.html */
-@media (max-width: 800px) {
-	body {
-		margin: 0 auto;
-	}
-	
-/*	Great Idea logo above navigation links */
-	.minus800 {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: center;
-		padding-bottom: 20px;
-	}
+.logo {
+	width: auto;
+}
+
+/* Above this line is code for Mobile First */
+
+@media (min-width: 500px) {
 	
 	nav {
 		display: flex;
-		flex-flow: row wrap;
+		flex-flow: row nowrap;
 		justify-content: space-between;
-/*		width: 0 auto;*/
+		align-items: center;
 	}
 
 	nav a {
@@ -320,63 +314,87 @@ li {
 		flex-flow: row wrap;
 		justify-content: space-between;
 		align-content: space-around;
-	}
-	
-	/*	Great Idea logo inline with navigation links */
-	.plus800 {
-		display: none;	
-	}
-	
-	.img-content {
-		display: none;
-	}
-}
-
-@media (max-width: 500px) {
-	nav {
-		display: flex;
-		flex-flow: column nowrap;
-		justify-content: center;
-		align-content: center;
-		width: 90%;
-		margin: 0 auto;
-	}
-	
-	nav a {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-bottom: 1px solid black;
+		border-bottom: none;
 		margin: 0 auto;
 		width: 100%;
-		padding: 10px 0;
-	}
+		padding: 0;
+	}	
 	
 	.upper {
 		display: flex;
-		flex-flow: column nowrap;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: flex-start;
 	}
-	
+
 	.top_content {
 		display: flex;
 		flex-flow: column nowrap;
-		justify-content: flex-start;
-		align-content: flex-start;
+		justify-content: space-between;
 		align-items: flex-start;
-		padding-bottom: 15px;
+		flex-shrink: 1;
 	}
-	
+
+	.top_content p {
+		width: 95%;
+		margin: 0;
+	}
+
 	.lower {
 		display: flex;
-		flex-flow: column nowrap;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-content: flex-start;
 	}
-	
+
 	.bottom_content {
 		display: flex;
 		flex-flow: column nowrap;
-		justify-content: flex-start;
+		justify-content: space-evenly;
 		align-content: flex-start;
-		align-items: flex-start;
-		padding-bottom: 15px;
+	/*	flex-shrink: 5;*/
 	}
+
+	.bottom_content p {
+		width: 95%;
+		margin: 0;
+	}
+
 }
+
+
+@media (min-width: 800px) {
+
+	.minus800 {
+		display: none;
+	}
+
+	nav {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 auto;
+		width: 90%;
+	}
+	
+	.plus800 {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.logo {
+		width: auto;
+		height: auto;
+	}
+	
+	.img-content {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+	}
+
+}
+
